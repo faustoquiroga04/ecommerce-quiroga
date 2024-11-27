@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { getProducts, getProductsByCategory } from '../../asyncMock'
 import { useParams } from 'react-router-dom'
 import ItemList from '../ItemList/ItemList'
+import './ItemListContainer.css'
 
 export default function ItemListContainer() {
     const [products, setProducts] = useState([])
@@ -12,11 +13,9 @@ export default function ItemListContainer() {
         asyncFunction(categoryId)
             .then((data) => setProducts(data))
     }, [categoryId])
-
-    console.log(products)
     return (
         <div>
-            <h2>Bienvenido a Tienda React</h2>
+            <h2 className='greeting'>Bienvenido a Tienda React</h2>
             <ItemList products={products} />
         </div>
   )

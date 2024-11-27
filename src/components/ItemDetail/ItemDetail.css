@@ -1,0 +1,39 @@
+.itemDetail {
+    display: flex;
+    justify-content: center;
+    padding: 3rem 5rem;
+}
+
+.itemDetail img {
+    width: 500px !important;
+}
+
+.itemDetailText {
+    border-radius: 1rem;
+    padding: 2rem;
+    height: fit-content;
+    margin-left: 10rem;
+    display: flex;
+    flex-direction: column;
+    background-color: bisque;
+    gap: 1rem;
+}
+
+.itemDetailText h2 {
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.itemDetailText p {
+    font-size: 1.5rem;
+}
+
+.itemDetailText a {
+    background-color: #C72;
+    margin-top: 1rem;
+    padding: .8rem 1rem;
+    color: white;
+    border-radius: .5rem;
+    text-align: center;
+}

@@ -1,16 +1,17 @@
 import { Link } from "react-router-dom";
+import './ItemDetail.css'
 
 export default function ItemDetail({name, img, description, category, price, stock}) {
 
     return (
     <div>
-        <h2>{name}</h2>
-        <div>
+        <div className="itemDetail">
             <img src={img} 
             style={{width: 300}}
             alt={name}
             />
-            <div>
+            <div className="itemDetailText">
+                <h2>{name}</h2>
                 <p>{description}</p>
                 <p>Categoria: {category}</p>
                 <p>Precio: ${price}</p>

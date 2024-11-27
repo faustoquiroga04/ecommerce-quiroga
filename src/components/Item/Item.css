@@ -1,0 +1,28 @@
+.itemText h2, .itemText p, .details {
+    color: #21272A;
+    margin: auto;
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.item img {
+    width: 300px;
+}
+
+.itemText {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+.details {
+    background-color: #C72;
+    margin-top: 1rem;
+    padding: .8rem 1rem;
+    color: white;
+    border-radius: .5rem;
+}
