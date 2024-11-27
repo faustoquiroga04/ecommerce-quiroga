@@ -11,7 +11,7 @@ export default function NavBar({title}) {
           </Link>
           
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+            <ul className="navbar-nav">
               <li className="nav-item">
                 <Link className="nav-link active" aria-current="page" to="/category/celular">
                   Phones
@@ -28,7 +28,7 @@ export default function NavBar({title}) {
                 </Link>
               </li>
             </ul>
-            <form className="d-flex" role="search">
+            <form className="" role="search">
                 <CartWidget cartCount={5} />
             </form>
           </div>
