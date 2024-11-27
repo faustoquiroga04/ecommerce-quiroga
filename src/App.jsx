@@ -8,7 +8,7 @@ import Checkout from './components/Checkout/Checkout'
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/ecommerce-quiroga">
       <NavBar />
       <Routes>
         <Route path='/' element={<ItemListContainer />}/>
