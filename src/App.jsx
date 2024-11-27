@@ -1,18 +1,24 @@
 import './App.css'
-import Nav from './components/nav'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route} from 'react-router-dom'
+import NavBar from './components/NavBar/NavBar'
+import ItemListContainer from './components/ItemListContainer/ItemListContainer'
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer'
+import Cart from './components/Cart/Cart'
+import Checkout from './components/Checkout/Checkout'
 
 function App() {
-
   return (
-    <Router>
-      <Nav />
+    <BrowserRouter>
+      <NavBar />
       <Routes>
-        <Route path='./' element={<h1>Home</h1>}/>
-        <Route path='./nosotros' element={<h1>Nosotros</h1>} />
-        <Route path='./contacto' element={<h1>Contacto</h1>} />
+        <Route path='/' element={<ItemListContainer />}/>
+        <Route path='/category/:categoryId' element={<ItemListContainer />}/>
+        <Route path='/detail/:productId' element={<ItemDetailContainer/>}/>
+        <Route path='/cart' element={<Cart />}/>
+        <Route path='/chechout' element={<Checkout />}/>
+        <Route path='*' element={<h1>404</h1>}/>
       </Routes>
-    </Router>
+    </BrowserRouter>
   )
 }
 
