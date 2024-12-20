@@ -1,0 +1,12 @@
+.cartQuantity {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    p {
+        font-size: 20px;
+    }
+}
+.cartQuantity:hover{
+    color: rgb(204, 119, 34);
+}
