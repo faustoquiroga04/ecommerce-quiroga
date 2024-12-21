@@ -20,7 +20,7 @@ export default function ItemDetail({id, name, img, description, category, price,
                 <p>Categoria: {category}</p>
                 <p>Precio: ${price}</p>
                 <p>Disponible: {stock}</p>
-                {<ItemCount stock={stock} onAdd={handleAdd}/>}
+                {/* {<ItemCount stock={stock} onAdd={handleAdd}/>} */}
                 {/* <Link to="/cart">Finalizar Compra</Link> */}
             </div>
         </div>

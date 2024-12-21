@@ -1,10 +1,13 @@
+import { memo } from "react";
 import Item from "../Item/Item";
 import './ItemList.css'
 
-export default function ItemList({products}) {
+function ItemList({products}) {
   return (
     <div className="itemList">
       {products.map(product => <Item key={product.id} product={product} />)}
     </div>
   )
 }
+
+export default memo(ItemList)
