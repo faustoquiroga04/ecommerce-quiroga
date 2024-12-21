@@ -1,11 +1,17 @@
-//import { Link } from "react-router-dom";
-import './ItemDetail.css'
+import { Link } from "react-router-dom";
 import { useCart } from "../../hooks/useCart";
 import ItemCount from "../ItemCount/ItemCount";
+import './ItemDetail.css'
 
 export default function ItemDetail({id, name, img, description, category, price, stock}) {
+    const {addItem, isInCart} = useCart()
 
-    const {addItem} = useCart()
+    const handleAdd = (count) => {
+        const productToAdd = {
+            id, name, price, quantity: count
+        }
+        addItem(productToAdd)
+    }
     
     return (
     <div>
@@ -20,9 +26,16 @@ export default function ItemDetail({id, name, img, description, category, price,
                 <p>Categoria: {category}</p>
                 <p>Precio: ${price}</p>
                 <p>Disponible: {stock}</p>
-                {/* {<ItemCount stock={stock} onAdd={handleAdd}/>} */}
-                {/* <Link to="/cart">Finalizar Compra</Link> */}
             </div>
+            {
+                isInCart(id) ? (
+                    <Link to="/cart">Finalizar Compra</Link>
+                ) 
+                : (
+                    <ItemCount stock={stock} onAdd={handleAdd}/>
+                )
+            }
+
         </div>
     </div>
   )

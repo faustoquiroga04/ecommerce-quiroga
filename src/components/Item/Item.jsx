@@ -14,4 +14,3 @@ export default function Item({product}) {
     </div>
   )
 }
-

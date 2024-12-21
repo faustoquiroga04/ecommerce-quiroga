@@ -1,21 +1,13 @@
 import { useEffect, useState } from "react"
-//import { getProductByID } from "../../asyncMock"
 import { useParams } from "react-router-dom"
 import ItemDetail from "../ItemDetail/ItemDetail"
-import './ItemDetailContainer.css'
 import { doc, getDoc } from "firebase/firestore"
 import { db } from "../../services/firebase"
+import './ItemDetailContainer.css'
 
 export default function ItemDetailContainer() {
   const [product, setProduct] = useState({})
   const {productId} = useParams()
-
-  // useEffect(() => {
-  //   getProductByID(productId)
-  //     .then((res) => {
-  //       setProduct(res)
-  //     })
-  // }, [productId])
 
   useEffect(() => {
     getDoc(doc(db, 'products', productId))
@@ -26,7 +18,7 @@ export default function ItemDetailContainer() {
       .catch((error) => {
         console.log('Error searching product', error)
       })
-  })
+  }, [productId])
 
   return (
     <div className='producto'>
