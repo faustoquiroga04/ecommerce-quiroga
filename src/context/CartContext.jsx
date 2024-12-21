@@ -3,32 +3,33 @@ import { createContext, useState} from 'react';
 export const CartContext = createContext();
 
 export const CartProvider = ({children}) => {
-    const [cart, setCart] = useState([])
+    const [cart, setCart] = useState([]);
+
     const isInCart = (id) => {
-        return cart.some(item => item.id === id)
+        return cart.some((prod) => prod.id === id)
     }
-    const addItem = (itemToAdd) => {
-        if(!isInCart(itemToAdd.id)){
-            setCart((prev) => [...prev, itemToAdd])
-        } else{
-            console.log('El item ya está en el carrito')
+    const addItem = (productoToAdd) => {
+        if(!isInCart(productoToAdd.id)){
+            setCart((prev) => [...prev, productoToAdd])
+        } else {
+            console.log('El producto ya está en el carrito') 
         }
-    } 
+    }
     const removeItem = () => {}
     const clearCart = () => {}
     const getTotal = () => {}
-    // const getTotalQuantity = () => {}
+    //const getTotalQuantity = () => {}
     //const totalQuantity = getTotalQuantity()
-    const totalQuantity = 0
+    const totalQuantity = 5
 
     const obj = {
-        // cart, 
+        cart,
         isInCart,
         addItem,
         removeItem,
         clearCart,
         getTotal,
-        totalQuantity,
+        totalQuantity
     }
     return (
         <CartContext.Provider value ={obj}>

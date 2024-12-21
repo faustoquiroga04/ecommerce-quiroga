@@ -29,12 +29,10 @@ export default function NavBar({title}) {
               </Link>
             </li>
           </ul>
-          
           <form className="cart" role="search">
             <Link to='/cart'>
               <CartWidget cartCount={5}/>
             </Link>
-                
           </form>
         </div>
       </nav>

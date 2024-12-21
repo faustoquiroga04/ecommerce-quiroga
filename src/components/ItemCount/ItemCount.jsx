@@ -1,20 +1,22 @@
 import { useState } from 'react'
 import { useCart } from '../../hooks/useCart'
+
 export default function ItemCount({initialValue=1, stock}) {
-    const [amount, setAmount] = useState(initialValue)
+    const [cantidad, setCantidad] = useState(initialValue)
     const {addItem} = useCart()
+    
     const decrement = () => {
-        setAmount(amount > 1 ? amount - 1 : amount)
+        setCantidad(cantidad > 1 ? cantidad - 1 : cantidad)
     }
 
     const increment = () => {
-        setAmount(amount < stock ? amount + 1 : amount)
+        setCantidad(cantidad < stock ? cantidad + 1 : cantidad)
     }
     return (
     <>
-        <h1>{amount}</h1>
+        <h1>{cantidad}</h1>
         <button onClick={decrement}>Decrementar</button>
-        <button onClick={() => addItem(amount)}>Agregar al carrito</button>
+        <button onClick={() => addItem(cantidad)}>Agregar al carrito</button>
         <button onClick={increment}>Incrementar</button>
     </>
   )

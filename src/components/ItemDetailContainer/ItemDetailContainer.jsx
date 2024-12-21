@@ -17,6 +17,7 @@ export default function ItemDetailContainer() {
   return (
     <div className='producto'>
         <h2>Detalle del Producto</h2>
+        <hr />
         <ItemDetail {...product}/>
     </div>
   )

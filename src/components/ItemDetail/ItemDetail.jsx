@@ -1,17 +1,12 @@
-import { Link } from "react-router-dom";
+//import { Link } from "react-router-dom";
 import './ItemDetail.css'
-//import { useCart } from "../../hooks/useCart";
+import { useCart } from "../../hooks/useCart";
 import ItemCount from "../ItemCount/ItemCount";
 
 export default function ItemDetail({id, name, img, description, category, price, stock}) {
-    //const {addItem} = useCart()
+
+    const {addItem} = useCart()
     
-    const handleAdd = (cantidad) => {
-        const objectToAdd = {
-            id, name, price, cantidad
-        }
-        console.log(objectToAdd)
-    }
     return (
     <div>
         <div className="itemDetail">
@@ -25,8 +20,8 @@ export default function ItemDetail({id, name, img, description, category, price,
                 <p>Categoria: {category}</p>
                 <p>Precio: ${price}</p>
                 <p>Disponible: {stock}</p>
-                <ItemCount stock={stock} onAdd={handleAdd}/>
-                <Link to="/cart">Finalizar Compra</Link>
+                {<ItemCount stock={stock} onAdd={handleAdd}/>}
+                {/* <Link to="/cart">Finalizar Compra</Link> */}
             </div>
         </div>
     </div>
